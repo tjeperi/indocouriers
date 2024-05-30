@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-Thank you for considering contributing to indocarriers! By contributing to this project, you agree to abide by the [Code of Conduct](CODE_OF_CONDUCT.md).
+Thank you for considering contributing to indocouriers! By contributing to this project, you agree to abide by the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Ways to Contribute
 
