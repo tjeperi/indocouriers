@@ -1,6 +1,6 @@
 # Indonesia Carriers
 
-[![GitHub license](https://img.shields.io/github/license/tjeperi/indocarriers)](https://github.com/tjeperi/indocarriers/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/tjeperi/indocarriers)](https://github.com/tjeperi/indocarriers/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/tjeperi/indocarriers)](https://github.com/tjeperi/indocarriers/issues)
 [![GitHub stars](https://img.shields.io/github/stars/tjeperi/indocarriers)](https://github.com/tjeperi/indocarriers/stargazers)
 
