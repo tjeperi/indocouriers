@@ -61,7 +61,7 @@ class Indocarriers extends CarrierModule
         $this->name = 'indocarriers';
         $this->tab = 'shipping_logistics';
         $this->version = '1.0.0';
-        $this->author = 'hardcoder69';
+        $this->author = 'tjeperi';
         $this->need_instance = 1;
 
         /**
