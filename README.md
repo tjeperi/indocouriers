@@ -44,7 +44,7 @@ Indonesia shipping module for Prestahop using rajaongkir PRO account.
 
 Find the **Indonesia Couriers** module in the installed modules list and click **Configure**
 * Select **Origin city** according to the city of your shop.
-* Fill **API Key** field with your rajaongkir API PRO.
+* Fill **API Key** field with your rajaongkir API PRO key.
 * Save.
 
 ## Configuration
