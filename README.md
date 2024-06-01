@@ -6,9 +6,12 @@
 
 ## Overview
 
+> [!NOTE]
+> ***I am an independent individual and not affiliated with rajaongkir***
+
 Indonesia shipping module for Prestahop using rajaongkir PRO account.
 
-### Courier lists:
+### List of couriers:
 - Sicepat
 - JNE
 - JNT
@@ -17,7 +20,7 @@ Indonesia shipping module for Prestahop using rajaongkir PRO account.
 - WAHANA
 - POS
 
-### Requierment
+### Requierments
 
 * Rajaongkir PRO Account
 * Prestashop 1.7 or greater
