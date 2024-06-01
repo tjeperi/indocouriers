@@ -1,8 +1,8 @@
 # Indonesia Couriers
 
-[![GitHub license](https://img.shields.io/github/license/tjeperi/indocouriers)](https://github.com/tjeperi/indocouriers/blob/main/LICENSE)
+[![GitHub License](https://img.shields.io/github/license/tjeperi/indocouriers)](https://github.com/tjeperi/indocouriers/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/tjeperi/indocouriers)](https://github.com/tjeperi/indocouriers/issues)
-[![GitHub stars](https://img.shields.io/github/stars/tjeperi/indocouriers)](https://github.com/tjeperi/indocouriers/stargazers)
+[![GitHub Repo stars](https://img.shields.io/github/stars/tjeperi/indocouriers?style=flat)](https://github.com/tjeperi/indocouriers/stargazers)
 
 ## Overview
 
