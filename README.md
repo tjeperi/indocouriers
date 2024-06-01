@@ -55,9 +55,15 @@ Find the **Indonesia Couriers** module in the installed modules list and click *
 
 If you'd like to contribute to this project, please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting a pull request or opening an issue.
 
+## Donate
+
+If you find this module useful and would like to support its development, consider making a donation:
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/paypalme/CEriGandari)
+
+
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/paypalme/CEriGandari)
 
