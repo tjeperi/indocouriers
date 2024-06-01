@@ -51,7 +51,7 @@ Find the **Indonesia Couriers** module in the installed modules list and click *
 
 * Go to **"Shipping > Carriers"** menu.
 * You can enable/disable the type of courier service you want to use.
-* You do not need to edit or change the service shipping cost, as they will have no effect. The system will get shipping costs from Rajaongkir directly.
+* You do not need to edit or change the service shipping cost, as they will have no effect. The module will get shipping costs from Rajaongkir directly.
 
 ## Contributing
 
