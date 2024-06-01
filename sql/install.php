@@ -26,15 +26,15 @@
 
 $sql = array();
 
-$sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'indocarriers` (
-    `id_indocarriers` int(11) NOT NULL AUTO_INCREMENT,
+$sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'indocouriers` (
+    `id_indocouriers` int(11) NOT NULL AUTO_INCREMENT,
     `order_id` int(11) DEFAULT NULL,
     `cache_name` varchar(250) CHARACTER SET utf8 DEFAULT NULL,
     `value` text CHARACTER SET utf8 DEFAULT NULL,
-    PRIMARY KEY  (`id_indocarriers`)
+    PRIMARY KEY  (`id_indocouriers`)
 ) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
 
-$sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'indocarriers_tracking` (
+$sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'indocouriers_tracking` (
     `id_tracking` int(11) NOT NULL AUTO_INCREMENT,
     `order_id` int(11) DEFAULT NULL,
     `tracking_number` varchar(100) DEFAULT NULL,

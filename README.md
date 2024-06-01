@@ -32,6 +32,7 @@ Indonesia shipping module for Prestahop using rajaongkir PRO account.
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Configuration](#configuration)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -39,15 +40,22 @@ Indonesia shipping module for Prestahop using rajaongkir PRO account.
 
 1. Download or clone the modules from this repository.
 2. Extract the modules, then rename the folder as **indocouriers** and zip as **indocouriers.zip**
-3. Login to your Prestashop admin page and go to **"Modules and Services > Modules and Services"** menu.
-4. Click on the **"Add a new module"** and locate the **indocouriers.zip** file, then upload it.
-5. Find the **Indonesia Couriers** module in the module list and click **install**, then enable it.
+3. Login to your Prestashop admin page and go to **"Modules > Module Manager"** menu.
+4. Click on the **"Upload a module"** and locate the **indocouriers.zip** file, then upload it.
+5. Find the **Indonesia Couriers** module in the module list and click **Configure**.
 
 ## Usage
 
-Find the **Indonesia Couriers** module in the installed modules list and click **configure**
+Find the **Indonesia Couriers** module in the installed modules list and click **Configure**
 * Select **Origin city** according to the city of your shop.
-* Fill **Enter your API Key** field with your rajaongkir API PRO.
+* Fill **API Key** field with your rajaongkir API PRO.
+* Save.
+
+## Configuration
+
+* Go to **"Shipping > Carriers"** menu.
+* You can enable/disable the type of courier service you want to use.
+* You do not need to edit or change the service shipping cost, as they will have no effect. The system will get shipping costs from Rajaongkir directly.
 
 ## Contributing
 

@@ -18,7 +18,7 @@
      aria-selected="false"
   >
     <i class="material-icons">featured_play_list</i>
-    {l s='Nomor Resi' mod='indocarriers'}
+    {l s='Nomor Resi' mod='indocouriers'}
   </a>
 </li>
 <li class="nav-item">
@@ -32,6 +32,6 @@
      aria-selected="false"
   >
     <i class="material-icons">pin_drop</i>
-    {l s='Lacak Kiriman' mod='indocarriers'}
+    {l s='Lacak Kiriman' mod='indocouriers'}
   </a>
 </li>

@@ -41,14 +41,14 @@
         <div class="row">
           <div class="col-12 form-group">
             <label for="no_resi" class="form-control-label label-on-top col-12">
-              {l s='Update nomor resi' mod='indocarriers'}
+              {l s='Update nomor resi' mod='indocouriers'}
             </label>
             <div class="col-12">
               <div class="input-group">
                 <input type="text" id="no_resi" name="no_resi" class="form-control" value="{$resi_number|escape:'htmlall':'UTF-8'}" />
                 <input type="hidden" name="submitupdateresi" value="1">
                 <button id="submit-update-resi" type="submit" class="btn btn-primary">
-                  {l s='Update Resi' mod='indocarriers'}
+                  {l s='Update Resi' mod='indocouriers'}
                 </button>
               </div>
             </div>
@@ -107,7 +107,7 @@
             <input type="hidden" name="lacak_carrier_name" class="form-control" value="{$carrier_name|escape:'htmlall':'UTF-8'}">
             <input type="hidden" name="lacak_no_resi" class="form-control" value="{$resi_number|escape:'htmlall':'UTF-8'}" />
             <button id="submit-lacak-resi" type="submit" class="btn btn-primary">
-              {l s='Tracking shipping' mod='indocarriers'}
+              {l s='Tracking shipping' mod='indocouriers'}
             </button>
           </div>
         </form>

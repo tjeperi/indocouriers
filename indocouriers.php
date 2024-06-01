@@ -28,9 +28,9 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-class Indocarriers extends CarrierModule
+class Indocouriers extends CarrierModule
 {
-    const PREFIX = 'indocarriers_';
+    const PREFIX = 'indocouriers_';
 
     public $id_carrier;
 
@@ -58,7 +58,7 @@ class Indocarriers extends CarrierModule
 
     public function __construct()
     {
-        $this->name = 'indocarriers';
+        $this->name = 'indocouriers';
         $this->tab = 'shipping_logistics';
         $this->version = '1.0.0';
         $this->author = 'tjeperi';
@@ -71,8 +71,8 @@ class Indocarriers extends CarrierModule
 
         parent::__construct();
 
-        $this->displayName = $this->l('Indonesia Carriers');
-        $this->description = $this->l('Indonesian courier delivery module.');
+        $this->displayName = $this->l('Indonesia Couriers');
+        $this->description = $this->l('Indonesian courier shipping module.');
 
         $this->confirmUninstall = $this->l('Are you sure to uninstall this module?');
 
@@ -108,8 +108,8 @@ class Indocarriers extends CarrierModule
     public function uninstall()
     {
         $this->deleteCarriers();
-        Configuration::deleteByName('INDOCARRIERS_CITY_FROM');
-        Configuration::deleteByName('INDOCARRIERS_ACCOUNT_APIKEY');
+        Configuration::deleteByName('INDOCOURIERS_CITY_FROM');
+        Configuration::deleteByName('INDOCOURIERS_ACCOUNT_APIKEY');
         foreach ($this->the_carriers as $value) {
             Configuration::deleteByName(self::PREFIX . $value);
             Configuration::deleteByName(self::PREFIX . $value . '_reference');
@@ -197,7 +197,7 @@ class Indocarriers extends CarrierModule
     protected function getConfigForm()
     {
         $opt = array();
-        $cityData = Tools::file_get_contents(_PS_MODULE_DIR_ . "indocarriers/controllers/admin/city.json", true);
+        $cityData = Tools::file_get_contents(_PS_MODULE_DIR_ . "indocouriers/controllers/admin/city.json", true);
         $cityData = json_decode($cityData);
           
         foreach ($cityData->rajaongkir->results as $key) {
@@ -216,7 +216,7 @@ class Indocarriers extends CarrierModule
                     array(
                         'type' => 'select',
                         'desc' => $this->l('Select origin city'),
-                        'name' => 'INDOCARRIERS_CITY_FROM',
+                        'name' => 'INDOCOURIERS_CITY_FROM',
                         'label' => $this->l('Origin City'),
                         'required' => true,
                         'options' => array(
@@ -228,8 +228,8 @@ class Indocarriers extends CarrierModule
                     array(
                         'type' => 'text',
                         'prefix' => '<i class="icon icon-key"></i>',
-                        'desc' => $this->l('Enter your API Key'),
-                        'name' => 'INDOCARRIERS_ACCOUNT_APIKEY',
+                        'desc' => $this->l('Enter your rajaongkir API PRO Key'),
+                        'name' => 'INDOCOURIERS_ACCOUNT_APIKEY',
                         'label' => $this->l('API Key'),
                         'required' => true
                     ),
@@ -247,9 +247,9 @@ class Indocarriers extends CarrierModule
     protected function getConfigFormValues()
     {
         return array(
-            //'INDOCARRIERS_LIVE_MODE' => Configuration::get('INDOCARRIERS_LIVE_MODE', true),
-            'INDOCARRIERS_CITY_FROM' => Configuration::get('INDOCARRIERS_CITY_FROM', '23'),
-            'INDOCARRIERS_ACCOUNT_APIKEY' => Configuration::get('INDOCARRIERS_ACCOUNT_APIKEY', null),
+            //'INDOCOURIERS_LIVE_MODE' => Configuration::get('INDOCOURIERS_LIVE_MODE', true),
+            'INDOCOURIERS_CITY_FROM' => Configuration::get('INDOCOURIERS_CITY_FROM', '23'),
+            'INDOCOURIERS_ACCOUNT_APIKEY' => Configuration::get('INDOCOURIERS_ACCOUNT_APIKEY', null),
         );
     }
 
@@ -288,8 +288,8 @@ class Indocarriers extends CarrierModule
         $ongkir_wahanaeko = false;
         $ongkir_poskilat = false;
         $ongkir_posnext = false;
-        $apiKey = Configuration::get('INDOCARRIERS_ACCOUNT_APIKEY');
-        $origin = Configuration::get('INDOCARRIERS_CITY_FROM');
+        $apiKey = Configuration::get('INDOCOURIERS_ACCOUNT_APIKEY');
+        $origin = Configuration::get('INDOCOURIERS_CITY_FROM');
         $toCity = "";
         $order_id = Context::getContext()->cart->id;
 
@@ -297,7 +297,7 @@ class Indocarriers extends CarrierModule
         $address = new Address($id_address_delivery);
         $to = $address->city;
 
-        $cityData = Tools::file_get_contents(_PS_MODULE_DIR_ . "indocarriers/controllers/admin/city.json", true);
+        $cityData = Tools::file_get_contents(_PS_MODULE_DIR_ . "indocouriers/controllers/admin/city.json", true);
         $cityData = json_decode($cityData);
 
         foreach ($cityData->rajaongkir->results as $key) {
@@ -379,15 +379,15 @@ class Indocarriers extends CarrierModule
                 $ongkir_poskilat = isset($costData['POSKILAT']) ? $costData['POSKILAT'] : false;
                 $ongkir_posnext = isset($costData['POSNEXT']) ? $costData['POSNEXT'] : false;
             } else {
-                $getCacheQuery = "SELECT * FROM "._DB_PREFIX_."indocarriers WHERE cache_name = '$cache'
-                ORDER BY id_indocarriers DESC";
+                $getCacheQuery = "SELECT * FROM "._DB_PREFIX_."indocouriers WHERE cache_name = '$cache'
+                ORDER BY id_indocouriers DESC";
                 $getCache = Db::getInstance()->getRow($getCacheQuery);
-                $isCache = isset($getCache['id_indocarriers']) ? $getCache['id_indocarriers'] : "";
+                $isCache = isset($getCache['id_indocouriers']) ? $getCache['id_indocouriers'] : "";
                 if (empty($isCache)) {
                     $kurir = 'sicepat:jne:jnt:anteraja:tiki:wahana:pos';
                     $post = $this->getShippingCost($apiKey, $origin, $toCity, $weight, $kurir);
                     if (isset($post['rajaongkir']['results'])) {
-                        Db::getInstance()->execute("INSERT INTO "._DB_PREFIX_."indocarriers
+                        Db::getInstance()->execute("INSERT INTO "._DB_PREFIX_."indocouriers
                             (order_id, cache_name, `value`) VALUES
                             ('".$order_id."', '".$cache."', '".json_encode($post)."')");
                     } else {
@@ -775,7 +775,7 @@ class Indocarriers extends CarrierModule
     public function hookActionValidateOrder($params)
     {
         $order_id = $params['cart']->id;
-        Db::getInstance()->execute("DELETE FROM "._DB_PREFIX_."indocarriers WHERE order_id=" . $order_id);
+        Db::getInstance()->execute("DELETE FROM "._DB_PREFIX_."indocouriers WHERE order_id=" . $order_id);
     }
 
     public function hookDisplayAdminOrderTabLink($params)
@@ -830,12 +830,12 @@ class Indocarriers extends CarrierModule
                             break;
                     }
                     if (!empty($carrier)) {
-                        $apiKey = Configuration::get('INDOCARRIERS_ACCOUNT_APIKEY');
+                        $apiKey = Configuration::get('INDOCOURIERS_ACCOUNT_APIKEY');
                         $getPosition = $this->getShippingPosition($apiKey, $lacak_no_resi, $carrier);
                         if (isset($getPosition['rajaongkir']['result']['manifest'])) {
                             $manifest = json_encode($getPosition['rajaongkir']['result']['manifest']);
                             $status = isset($getPosition['rajaongkir']['result']['summary']['status']) ? $getPosition['rajaongkir']['result']['summary']['status'] : "";
-                            $queryU = "INSERT INTO "._DB_PREFIX_."indocarriers_tracking
+                            $queryU = "INSERT INTO "._DB_PREFIX_."indocouriers_tracking
                             (order_id, tracking_number, `value`, `status`)
                             VALUES($order_id, '$lacak_no_resi', '$manifest', '$status')
                             ON DUPLICATE KEY UPDATE `value`='$manifest',`status`='$status'";
@@ -875,7 +875,7 @@ class Indocarriers extends CarrierModule
             $image = file_exists(_PS_SHIP_IMG_DIR_ . (int) $carrier_id . '.jpg') ? _THEME_SHIP_DIR_ . (int) $carrier_id . '.jpg' : '';
         }
 
-        $queryT = "SELECT `value`, `status` FROM "._DB_PREFIX_."indocarriers_tracking WHERE order_id = '$order_id'";
+        $queryT = "SELECT `value`, `status` FROM "._DB_PREFIX_."indocouriers_tracking WHERE order_id = '$order_id'";
         $getManifest = Db::getInstance()->getRow($queryT);
         $manifest = isset($getManifest['value']) ? json_decode($getManifest['value'], true) : "";
         $shipping_status = isset($getManifest['status']) ? $getManifest['status'] : "";
@@ -911,7 +911,7 @@ class Indocarriers extends CarrierModule
         ;
 
         //$cities = City::getCitiesByIdState((int) $address->id_state);
-        $cities = Tools::file_get_contents(_PS_MODULE_DIR_ . "indocarriers/controllers/admin/city.json", true);
+        $cities = Tools::file_get_contents(_PS_MODULE_DIR_ . "indocouriers/controllers/admin/city.json", true);
         $cities = json_decode($cities);
 
         if (!empty($cities)) {

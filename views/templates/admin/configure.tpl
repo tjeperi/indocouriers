@@ -27,11 +27,11 @@
   {include file='./_partials/notifications.tpl'}
 {/block}
 <div class="panel">
-	<h3><i class="icon icon-truck"></i> {l s='Indonesia Carriers' mod='indocarriers'}</h3>
-	<img src="{$module_dir|escape:'html':'UTF-8'}/indocarriers.png" id="indocarriers-logo" class="pull-right" />
+	<h3><i class="icon icon-truck"></i> {l s='Indonesia Couriers' mod='indocouriers'}</h3>
+	<img src="{$module_dir|escape:'html':'UTF-8'}views/img/indocouriers.png" id="indocouriers-logo" class="pull-right" />
 	<p>
-		<strong>{l s='Silahkan isi data yang diperlukan!' mod='indocarriers'}</strong><br />
-		{l s='Pilih kota asal pengiriman.' mod='indocarriers'}<br />
-		{l s='Masukkan API Key akun raja ongkir Anda.' mod='indocarriers'}
+		<strong>{l s='Silahkan isi data yang diperlukan!' mod='indocouriers'}</strong><br />
+		{l s='Pilih kota asal pengiriman.' mod='indocouriers'}<br />
+		{l s='Masukkan API Key akun PRO rajaongkir Anda.' mod='indocouriers'}
 	</p>
 </div>
