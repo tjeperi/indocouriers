@@ -3,7 +3,6 @@
 [![GitHub license](https://img.shields.io/github/license/tjeperi/indocouriers)](https://github.com/tjeperi/indocouriers/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/tjeperi/indocouriers)](https://github.com/tjeperi/indocouriers/issues)
 [![GitHub stars](https://img.shields.io/github/stars/tjeperi/indocouriers)](https://github.com/tjeperi/indocouriers/stargazers)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/paypalme/CEriGandari)
 
 ## Overview
 
@@ -21,12 +20,7 @@ Indonesia shipping module for Prestahop using rajaongkir PRO account.
 ### Requierment
 
 * Rajaongkir PRO Account
-
-### Minimum Requirements
-
 * Prestashop 1.7 or greater
-* PHP version 5.4 or greater
-* MySQL version 5.0 or greater
 
 ## Table of Contents
 
@@ -64,4 +58,6 @@ If you'd like to contribute to this project, please read our [Contributing Guide
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/paypalme/CEriGandari)
 
